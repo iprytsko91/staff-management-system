@@ -1,0 +1,12 @@
+input {
+  height: 40px;
+  border-radius: var(--sms-border-radius);
+  border: 1px solid var(--sms-color-dark);
+  outline: none;
+  transition: all .3s ease;
+
+  &:hover,
+  &:focus {
+    border-color: var(--sms-color-tiffany-blue);
+  }
+}

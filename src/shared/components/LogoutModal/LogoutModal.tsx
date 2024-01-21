@@ -10,6 +10,7 @@ export function LogoutModal({ open }: { open: boolean }) {
   return (
       <Modal open={open}>
         <h2>Session will be terminated in 30sec</h2>
+        <button >X</button>
         <div className={classes['actions']}>
           <button className={`btn`}>Logout</button>
           <button className={`btn btn-primary`}>Continue</button>

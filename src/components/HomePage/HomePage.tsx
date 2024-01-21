@@ -5,7 +5,6 @@ import { LogoutModal } from "../../shared/components";
 import { useState } from "react";
 
 export function HomePage() {
-
   const [logoutModal, setLogoutModal] = useState();
 
   function openLogoutModal() {
