@@ -1,0 +1,27 @@
+header {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: var(--sms-header-height);
+  display: flex;
+  background: var(--sms-color-maastricht-blue);
+  box-shadow: 0 2px 4px #00000080;
+
+  .header-container {
+    padding: 0 var(--sms-site-padding-inline);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logo {
+    color: var(--sms-color-white);
+  }
+
+  .actions {
+    display: flex;
+    gap: 16px;
+  }
+}

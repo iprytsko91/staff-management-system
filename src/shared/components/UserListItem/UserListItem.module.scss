@@ -1,0 +1,42 @@
+.user-list-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 60px;
+  padding: 10px;
+  background: var(--sms-color-cultured);
+  border: 1px solid var(--ra-color-platinum);
+  border-radius: 10px;
+
+  .content-block {
+    display: flex;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .label {
+        font-size: var(--sms-font-size-14);
+        color: var(--sms-color-tiffany-quartz);
+        font-weight: 700;
+      }
+
+      &.username,
+      &.name {
+        width: 200px;
+      }
+
+      &.email {
+        min-width: 300px;
+      }
+    }
+  }
+
+  .actions-block {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+}

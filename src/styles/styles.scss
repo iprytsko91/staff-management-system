@@ -1,1 +1,17 @@
 @import "normalize.css";
+@import "./partials/buttons";
+@import "./partials/variables";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
