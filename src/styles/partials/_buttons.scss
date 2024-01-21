@@ -20,19 +20,28 @@ a {
 
 .btn {
   transition: all .3s ease;
+  background: transparent;
+  border: 1px solid var(--sms-color-dark);
+  padding: 10px 20px;
+  border-radius: var(--sms-block-border-radius);
+  cursor: pointer;
+
+  &:hover {
+    opacity: .6;
+    color: var(--sms-color-tiffany-blue);
+    border-color: var(--sms-color-tiffany-blue);
+  }
+
+  &.btn-primary {
+    background: var(--sms-color-tiffany-blue);
+    color: var(--sms-color-white);
+  }
 
   &.btn-circle {
+    padding: unset;
     border-radius: 50%;
     height: 50px;
     width: 50px;
-    cursor: pointer;
-    border: 1px solid var(--sms-color-dark);
-
-    &:hover {
-      opacity: .6;
-      color: var(--sms-color-tiffany-blue);
-      border-color: var(--sms-color-tiffany-blue);
-    }
   }
 }
 

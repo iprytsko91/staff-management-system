@@ -6,7 +6,7 @@
   padding: 10px;
   background: var(--sms-color-cultured);
   border: 1px solid var(--ra-color-platinum);
-  border-radius: 10px;
+  border-radius: var(--sms-block-border-radius);
 
   .content-block {
     display: flex;
