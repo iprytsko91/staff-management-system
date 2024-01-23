@@ -1,15 +1,11 @@
-export class UserModel {
+export interface UserModel {
   id: string;
   userName: string;
-  firstName: string;
-  lastName: string;
-  email: string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
   // password: string; //TODO:??
   // passcode: string; //TODO:??
-
-  constructor(init?: Partial<UserModel>) {
-    Object.assign(this, init);
-  }
 }
 
 

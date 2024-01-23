@@ -1,9 +1,14 @@
 import { BsFillPencilFill, BsFillTrash3Fill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
 
-import { UserModel } from "../../models";
 import classes from './UserListItem.module.scss';
+import { UserModel } from "../models";
+import { deleteUser, updateUser } from "../../store/sms";
 
 export function UserListItem({ user }: { user: UserModel }) {
+  const dispatch = useDispatch();
+
+  // TODO: good to separate by `content` component
   return (
       <div className={classes['user-list-item-container']}>
         <div className={`${classes['content-block']}`}>
@@ -23,9 +28,10 @@ export function UserListItem({ user }: { user: UserModel }) {
         </div>
 
         <div className={classes['actions-block']}>
-          <button className='btn btn-circle'><BsFillPencilFill/></button>
-
-          <button className='btn btn-circle'><BsFillTrash3Fill/></button>
+          {/*// TODO: edit in modal or expand?*/}
+          <button className='btn btn-circle' onClick={() => dispatch(updateUser(user))}><BsFillPencilFill/></button>
+          {/*// TODO: would be good to have confirmation modal*/}
+          <button className='btn btn-circle' onClick={() => dispatch(deleteUser(user))}><BsFillTrash3Fill/></button>
         </div>
       </div>
   )
