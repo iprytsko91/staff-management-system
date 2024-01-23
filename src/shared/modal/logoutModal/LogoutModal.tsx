@@ -22,8 +22,8 @@ export function LogoutModal() {
   return (
       <Modal open={modal.visible}>
         <h2>Session will be terminated in <CountdownTimer initSeconds={countdownTimer} timesOut={logout}/>sec</h2>
-        <div className={classes['actions']}>
-           <button className={`btn`} onClick={logout}>Logout</button>
+        <div className='actions'>
+          <button className={`btn`} onClick={logout}>Logout</button>
           <button className={`btn btn-primary`} onClick={closeAndContinue}>Continue</button>
         </div>
       </Modal>

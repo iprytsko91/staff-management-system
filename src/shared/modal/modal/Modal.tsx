@@ -1,8 +1,6 @@
 import { createPortal } from "react-dom";
 import { useEffect, useRef } from "react";
 
-import './Modal.scss';
-
 type ModalProps = { children: any, open: boolean };
 
 export function Modal({ children, open }: ModalProps) {

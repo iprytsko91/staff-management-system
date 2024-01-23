@@ -8,7 +8,6 @@ const IdleContext = createContext(null);
 export function IdleProvider() {
   const [startTimer, stopTimer] = useBnIdle(() => {
     modal.show();
-    //TODO: restart timer
   })
   const modal = useModal();
 

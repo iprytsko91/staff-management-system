@@ -3,12 +3,13 @@ import { BsFillPlusSquareFill } from "react-icons/bs";
 
 import classes from "./HomePage.module.scss";
 import { UserListItem } from "../../shared/userListItem/UserListItem.tsx";
-import { useModal } from "../../shared/modal/ModalProvider.tsx";
+import { ModalProvider, useModal } from "../../shared/modal/ModalProvider.tsx";
 import { useFetch } from "../../hooks/useFetch.ts";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store.ts";
 import { addUsers } from "../../store/sms";
 import { UserModel } from "../../shared/models";
+import { AddUserButton } from "../../shared/userListItem/addUserButton/AddUserButton.tsx";
 
 export function HomePage() {
   const users = useSelector((state: RootState) => state.sms.users)
@@ -40,23 +41,20 @@ export function HomePage() {
 
         <div className={`${classes['home-header']}`}>
           <h2>All Users ({users?.length})</h2>
-          <button className="btn" onClick={() => dispatch(addUsers([
-            {
-              id: Math.random().toString(),
-              userName: Math.random().toString(),
-              firstName: 'ivan',
-              lastName: 'prytsko',
-              email: 'fs@gmail.com'
-            } as UserModel
-          ]))}>
-            Add New <BsFillPlusSquareFill style={{ marginLeft: '4px', width: '24px', height: '24px' }}/>
-          </button>
+          <ModalProvider>
+            <AddUserButton/>
+          </ModalProvider>
         </div>
 
         {/*//TODO: can be refactored to shared component, or to child component ?*/}
-        <div className={classes['users-list']}>
-          {users?.map((item, index) => <UserListItem key={index} user={item}/>)}
-        </div>
+        {users?.length ?
+            <div className={classes['users-list']}>
+              {users.map((item, index) => <UserListItem key={index} user={item}/>)}
+            </div>
+            :
+            <div className={classes['no-users']}><h2>There are no users!</h2></div>
+        }
+
       </>
   );
 }
