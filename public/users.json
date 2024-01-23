@@ -1,4 +1,4 @@
-export const UsersList = [
+[
   {
     "id": "123abc",
     "userName": "user123",
@@ -69,4 +69,4 @@ export const UsersList = [
     "lastName": "Clark",
     "email": "sophie.clark@example.com"
   }
-];
+]

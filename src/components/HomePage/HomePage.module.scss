@@ -1,3 +1,9 @@
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .users-list {
   display: flex;
   flex-direction: column;

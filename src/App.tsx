@@ -1,8 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
-import './App.module.scss'
-import { Header } from "./shared/components";
+import classes from './App.module.scss'
+import { Header } from "./shared";
 import { HomePage, LoginPage, NotFoundPage } from "./components";
+import { ModalProvider } from "./shared/Modal/ModalProvider.tsx";
 
 function App() {
   return (
@@ -10,13 +11,17 @@ function App() {
         <BrowserRouter>
           <Header/>
           <main>
-            <Routes>
-              <Route path="/" element={<Navigate to="/home"/>}/>
-              <Route index path="home" element={<HomePage/>}/>
-              <Route path="login" element={<LoginPage/>}/>
-              <Route path="*" element={<Navigate to="/page-not-found"/>}/>
-              <Route path="page-not-found" element={<NotFoundPage/>}/>
-            </Routes>
+            <ModalProvider>
+              <div className={classes['main-container']}>
+                <Routes>
+                  <Route path="/" element={<Navigate to="/home"/>}/>
+                  <Route index path="home" element={<HomePage/>}/>
+                  <Route path="login" element={<LoginPage/>}/>
+                  <Route path="*" element={<Navigate to="/page-not-found"/>}/>
+                  <Route path="page-not-found" element={<NotFoundPage/>}/>
+                </Routes>
+              </div>
+            </ModalProvider>
           </main>
         </BrowserRouter>
       </>

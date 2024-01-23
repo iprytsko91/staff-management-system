@@ -3,6 +3,7 @@ input {
   border-radius: var(--sms-border-radius);
   border: 1px solid var(--sms-color-dark);
   outline: none;
+  padding: 5px 10px;
   transition: all .3s ease;
 
   &:hover,

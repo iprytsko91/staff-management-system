@@ -8,10 +8,10 @@ export function Header() {
           <Link to="/">
             <h2 className={classes['logo']}>Staff Management System</h2>
           </Link>
-          <div className={classes['actions']}>
+          <nav className={classes['actions']}>
             <Link to="/login" className='link-button'>Login</Link>
-            <Link to="/" className='link-button'>Logout</Link>
-          </div>
+            {/*<Link to="/" className='link-button'>Logout</Link>*/}
+          </nav>
         </div>
       </header>
   );

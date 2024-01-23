@@ -25,6 +25,11 @@ a {
   padding: 10px 20px;
   border-radius: var(--sms-border-radius);
   cursor: pointer;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
 
   &:hover {
     opacity: .6;
