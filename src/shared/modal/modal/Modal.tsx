@@ -21,7 +21,7 @@ export function Modal({ children, open }: ModalProps) {
   }, [open]);
 
   return createPortal(
-      <dialog ref={dialog}>{children}</dialog>,
+      <dialog ref={dialog} onCancel={(event) => event.preventDefault()}>{children}</dialog>,
       document.getElementById('modal')
   );
 }

@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import classes from './App.module.scss'
 import { Header } from "./shared";
 import { HomePage, LoginPage, NotFoundPage } from "./components";
-import { ModalProvider } from "./shared/Modal/ModalProvider.tsx";
+import { ModalProvider } from "./shared/modal/ModalProvider.tsx";
 
 function App() {
   return (

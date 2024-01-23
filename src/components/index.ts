@@ -1,3 +1,4 @@
-export * from './HomePage/HomePage.tsx';
-export * from './NotFoundPage/NotFoundPage.tsx';
-export * from './LoginPage/LoginPage.tsx';
+export * from './header/Header.tsx';
+export * from './homePage/HomePage.tsx';
+export * from './loginPage/LoginPage.tsx';
+export * from './notFoundPage/NotFoundPage.tsx';

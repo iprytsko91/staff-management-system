@@ -1,4 +1,4 @@
-import classes from "../NotFoundPage/NotFoundPage.module.scss";
+import classes from ".//NotFoundPage.module.scss";
 import { Link } from "react-router-dom";
 
 export function NotFoundPage() {

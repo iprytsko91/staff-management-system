@@ -1,4 +1,4 @@
-import { ModalProvider } from "../Modal/ModalProvider.tsx";
+import { ModalProvider } from "../modal/ModalProvider.tsx";
 import { IdleProvider } from "./IdleProvider.tsx";
 
 export function Idle() {

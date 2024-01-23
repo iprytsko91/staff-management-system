@@ -1,5 +1,6 @@
 import classes from './LoginPage.module.scss';
 import { useEffect, useRef, useState } from "react";
+import { useInput } from "../../hooks/useInput.ts";
 
 export function LoginPage() {
   const [login, setLogin] = useState('');
@@ -7,6 +8,8 @@ export function LoginPage() {
   const rendersCount = useRef(1);
   const prevValue = useRef('');
   console.log('Login page render')
+
+  const {reset, value, bind} = useInput('');
 
   useEffect(() => {
     console.log('Render Count Effect')
@@ -25,8 +28,11 @@ export function LoginPage() {
         <h1>Please log in to the system.</h1>
         <h1>renders count {rendersCount.current}</h1>
         <h1>Prev login {prevValue.current}</h1>
+        <h1>entered value {value}</h1>
+        <button onClick={reset}>clear</button>
 
         <form className={`${classes['form']}`}>
+          <input type="text" {...bind}/>
           <label htmlFor="login"></label>
           <input id="login"
                  type="text"

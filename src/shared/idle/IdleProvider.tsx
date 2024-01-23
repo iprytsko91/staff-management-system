@@ -1,7 +1,7 @@
 import { useBnIdle } from "use-bn-idle";
 import { createContext, useEffect } from "react";
-import { useModal } from "../Modal/ModalProvider.tsx";
-import { LogoutModal } from "../Modal/LogoutModal/LogoutModal.tsx";
+import { useModal } from "../modal/ModalProvider.tsx";
+import { LogoutModal } from "../modal/logoutModal/LogoutModal.tsx";
 
 const IdleContext = createContext(null);
 

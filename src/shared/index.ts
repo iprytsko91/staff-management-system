@@ -1,2 +1,2 @@
-export * from './Header/Header.tsx';
-export * from './UserListItem/UserListItem.tsx';
+export * from '../components/header/Header.tsx';
+export * from './userListItem/UserListItem.tsx';
