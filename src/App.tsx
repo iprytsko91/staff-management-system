@@ -32,7 +32,7 @@ export const App = () => {
                         </ProtectedLoginRoute>
                       }/>
                       <Route path="*" element={<Navigate to="/page-not-found"/>}/>
-                      <Route path="page-not-found" element={<NotFoundPage/>}/>
+                      <Route path="pageNotFound" element={<NotFoundPage/>}/>
                     </Routes>
                   </div>
                 </ModalProvider>
