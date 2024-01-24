@@ -1,26 +1,29 @@
 import classes from './LoginPage.module.scss';
 import { useEffect, useRef, useState } from "react";
 import { useInput } from "../../hooks/useInput.ts";
+import { useAuth } from "../../providers/AuthProvider.tsx";
 
 export function LoginPage() {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const rendersCount = useRef(1);
   const prevValue = useRef('');
-  console.log('Login page render')
+
+
+
 
   const {reset, value, bind} = useInput('');
 
   useEffect(() => {
-    console.log('Render Count Effect')
-    console.log('current count before change', rendersCount)
-    rendersCount.current++
-    console.log('current count after change', rendersCount)
+    // console.log('Render Count Effect')
+    // console.log('current count before change', rendersCount)
+    // rendersCount.current++
+    // console.log('current count after change', rendersCount)
   });
 
   useEffect(() => {
-    console.log('Preious login', prevValue)
-    prevValue.current = login;
+    // console.log('Preious login', prevValue)
+    // prevValue.current = login;
   }, [login]);
 
   return (
