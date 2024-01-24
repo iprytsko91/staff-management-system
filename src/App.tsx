@@ -31,7 +31,7 @@ export const App = () => {
                           <LoginPage/>
                         </ProtectedLoginRoute>
                       }/>
-                      <Route path="*" element={<Navigate to="/page-not-found"/>}/>
+                      <Route path="*" element={<Navigate to="/pageNotFound"/>}/>
                       <Route path="pageNotFound" element={<NotFoundPage/>}/>
                     </Routes>
                   </div>
