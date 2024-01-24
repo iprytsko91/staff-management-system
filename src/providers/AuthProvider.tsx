@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { reset } from "../store/sms";
@@ -21,11 +21,17 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useLocalStorage('token', '');
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [loginFailed, setLoginFailed] = useState(false);
 
-  const login = () => {
-    const token = generateToken();
-    setToken(token);
-    navigate('/');
+  const login = (userName: string, password: string) => {
+    if (userName === credentials.username && password == credentials.password) {
+      const token = generateToken();
+      setToken(token);
+      setLoginFailed(false);
+      navigate('/');
+    } else {
+      setLoginFailed(true);
+    }
   };
 
   const logout = () => {
@@ -38,7 +44,8 @@ export const AuthProvider = ({ children }) => {
     token: token,
     onLogin: login,
     onLogout: logout,
-    isAuthenticated: token
+    isAuthenticated: token,
+    isLoginFailed: loginFailed
   };
 
   return (
