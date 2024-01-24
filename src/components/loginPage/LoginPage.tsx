@@ -1,19 +1,12 @@
-import classes from './LoginPage.module.scss';
-import { useEffect, useRef, useState } from "react";
-import { useInput } from "../../hooks/useInput.ts";
-import { useAuth } from "../../providers/AuthProvider.tsx";
+import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { UserModel } from "../../shared/models";
-import { requiredMessage } from "../../shared/modal/editUserModal/EditUserModal.tsx";
 
-interface LoginModel {
-  userName: string,
-  password: string
-}
+import classes from './LoginPage.module.scss';
+import { useAuth } from "../../providers";
+import { LoginModel } from "../../models";
+import { requiredMessage } from "../../utils";
 
-export function LoginPage() {
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
+export const LoginPage = () => {
   const auth = useAuth();
   const {
     register,

@@ -1,7 +1,7 @@
-import classes from ".//NotFoundPage.module.scss";
+import classes from "./NotFoundPage.module.scss";
 import { Link } from "react-router-dom";
 
-export function NotFoundPage() {
+export const NotFoundPage = () => {
   return (
       <div className={`${classes['not-found-page-container']}`}>
         <h1>Page not found</h1>

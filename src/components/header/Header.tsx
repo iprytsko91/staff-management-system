@@ -1,8 +1,9 @@
-import classes from './Header.module.scss';
 import { Link } from "react-router-dom";
-import { useAuth } from "../../providers/AuthProvider.tsx";
 
-export function Header() {
+import classes from './Header.module.scss';
+import { useAuth } from "../../providers";
+
+export const Header = () => {
   const auth = useAuth();
 
   return (
@@ -12,6 +13,7 @@ export function Header() {
             <h2 className={classes['logo']}>Staff Management System</h2>
           </Link>
           <nav className={classes['actions']}>
+            {/*// TODO: can be a component switching log in and logout*/}
             {
               auth.isAuthenticated ?
                   <Link to="#" className='link-button' onClick={auth.onLogout}>Logout</Link>

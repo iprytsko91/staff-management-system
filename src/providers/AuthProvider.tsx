@@ -1,18 +1,11 @@
-import { createContext, useContext, useRef, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import md5 from "md5";
 import { useDispatch } from "react-redux";
+
 import { reset } from "../store/sms";
 import { useLocalStorage } from "../hooks";
-import md5 from 'md5';
-
-const credentials = {
-  username: 'admin',
-  password: '21232f297a57a5a743894a0e4a801fc3' // MD5 Admin
-}
-
-const generateToken = () => {
-  return Math.random().toString(16).substring(2);
-}
+import { credentials, generateToken } from "../utils";
 
 const AuthContext = createContext(null);
 

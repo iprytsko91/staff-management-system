@@ -1,4 +1,4 @@
-import { UserModel } from "../../shared/models";
+import { UserModel } from "../../models";
 
 interface SmsState {
   users: UserModel[]

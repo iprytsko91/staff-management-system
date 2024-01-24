@@ -1,40 +1,29 @@
 import { useEffect } from "react";
-import { BsFillPlusSquareFill } from "react-icons/bs";
 
 import classes from "./HomePage.module.scss";
-import { UserListItem } from "../../shared/userListItem/UserListItem.tsx";
-import { ModalProvider, useModal } from "../../shared/modal/ModalProvider.tsx";
-import { useFetch } from "../../hooks/useFetch.ts";
+import { UserListItem } from "../userListItem/UserListItem.tsx";
+import { ModalProvider } from "../../providers";
+import { useFetch } from "../../hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store.ts";
 import { addUsers } from "../../store/sms";
-import { UserModel } from "../../shared/models";
-import { AddUserButton } from "../../shared/userListItem/addUserButton/AddUserButton.tsx";
+import { AddUserButton } from "../userListItem/addUserButton/AddUserButton.tsx";
+import { Idle } from "../shared";
 
-export function HomePage() {
+export const HomePage = () => {
   const users = useSelector((state: RootState) => state.sms.users)
-  const modal = useModal();
   const { data } = useFetch('users.json')
   const dispatch = useDispatch()
 
-
   useEffect(() => {
-    if (!data) {
-      return;
+    if (data) {
+      dispatch(addUsers(data))
     }
-
-    dispatch(addUsers(data))
   }, [data])
 
   return (
       <>
-        {/*<button onClick={() => setAuth('true')}>local storage</button>*/}
-        {/*<Idle/>*/}
-        {/*<div>*/}
-        {/*  Emulation actions*/}
-        {/*  <button className={`btn`} onClick={modal.show}>Open Logout Modal</button>*/}
-        {/*  <LogoutModal/>*/}
-        {/*</div>*/}
+        <Idle/>
 
         <div className={`${classes['home-header']}`}>
           <h2>All Users ({users?.length})</h2>
@@ -43,7 +32,7 @@ export function HomePage() {
           </ModalProvider>
         </div>
 
-        {/*//TODO: can be refactored to shared component, or to child component ?*/}
+        {/*//TODO: better to extract users list to separate component*/}
         {users?.length ?
             <div className={classes['users-list']}>
               {users.map((item, index) => <UserListItem key={index} user={item}/>)}
@@ -51,7 +40,6 @@ export function HomePage() {
             :
             <div className={classes['no-users']}><h2>There are no users!</h2></div>
         }
-
       </>
   );
 }

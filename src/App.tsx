@@ -2,14 +2,12 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import classes from './App.module.scss'
-import { Header } from "./shared";
-import { HomePage, LoginPage, NotFoundPage } from "./components";
-import { ModalProvider } from "./shared/modal/ModalProvider.tsx";
 import { store } from "./store/store.ts";
-import { AuthProvider } from "./providers/AuthProvider.tsx";
-import { ProtectedLoginRoute, ProtectedRoute } from "./shared/routes";
+import { AuthProvider, ModalProvider } from "./providers";
+import { Header, HomePage, LoginPage, NotFoundPage } from "./components";
+import { ProtectedLoginRoute, ProtectedRoute } from "./components/shared";
 
-function App() {
+export const App = () => {
   // TODO: here should be definitely separation. Layout, Router and etc.
   return (
       <>
@@ -45,5 +43,3 @@ function App() {
       </>
   )
 }
-
-export default App

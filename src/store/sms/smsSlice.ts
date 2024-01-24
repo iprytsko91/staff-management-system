@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-import { UserModel } from "../../shared/models";
+import { UserModel } from "../../models";
 import { smsInitialState } from "./smsState.ts";
 
 export const smsSlice = createSlice({
