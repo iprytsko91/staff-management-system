@@ -1,72 +1,82 @@
 [
   {
-    "id": "123abc",
-    "userName": "user123",
+    "id": "1",
+    "userName": "user1",
     "firstName": "John",
     "lastName": "Doe",
-    "email": "john.doe@example.com"
+    "email": "john.doe@example.com",
+    "password": "password1"
   },
   {
-    "id": "456def",
-    "userName": "user456",
+    "id": "2",
+    "userName": "user2",
     "firstName": "Jane",
     "lastName": "Smith",
-    "email": "jane.smith@example.com"
+    "email": "jane.smith@example.com",
+    "password": "password2"
   },
   {
-    "id": "789ghi",
-    "userName": "user789",
+    "id": "3",
+    "userName": "user3",
     "firstName": "Bob",
     "lastName": "Johnson",
-    "email": "bob.johnson@example.com"
+    "email": "bob.johnson@example.com",
+    "password": "password3"
   },
   {
-    "id": "101jkl",
-    "userName": "user101",
+    "id": "4",
+    "userName": "user4",
     "firstName": "Alice",
     "lastName": "Williams",
-    "email": "alice.williams@example.com"
+    "email": "alice.williams@example.com",
+    "password": "password4"
   },
   {
-    "id": "112mno",
-    "userName": "user112",
+    "id": "5",
+    "userName": "user5",
     "firstName": "Charlie",
     "lastName": "Brown",
-    "email": "charlie.brown@example.com"
+    "email": "charlie.brown@example.com",
+    "password": "password5"
   },
   {
-    "id": "131pqr",
-    "userName": "user131",
+    "id": "6",
+    "userName": "user6",
     "firstName": "Eva",
     "lastName": "Miller",
-    "email": "eva.miller@example.com"
+    "email": "eva.miller@example.com",
+    "password": "password6"
   },
   {
-    "id": "145stu",
-    "userName": "user145",
+    "id": "7",
+    "userName": "user7",
     "firstName": "David",
     "lastName": "Anderson",
-    "email": "david.anderson@example.com"
+    "email": "david.anderson@example.com",
+    "password": "password7"
   },
   {
-    "id": "167vwx",
-    "userName": "user167",
+    "id": "8",
+    "userName": "user8",
     "firstName": "Grace",
     "lastName": "Taylor",
-    "email": "grace.taylor@example.com"
+    "email": "grace.taylor@example.com",
+    "password": "password8"
   },
   {
-    "id": "189yz",
-    "userName": "user189",
+    "id": "9",
+    "userName": "user9",
     "firstName": "Frank",
     "lastName": "Jones",
-    "email": "frank.jones@example.com"
+    "email": "frank.jones@example.com",
+    "password": "password9"
   },
   {
-    "id": "201abc",
-    "userName": "user201",
+    "id": "10",
+    "userName": "user10",
     "firstName": "Sophie",
     "lastName": "Clark",
-    "email": "sophie.clark@example.com"
+    "email": "sophie.clark@example.com",
+    "password": "password10"
   }
 ]

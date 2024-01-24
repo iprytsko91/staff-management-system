@@ -4,8 +4,8 @@ export interface UserModel {
   firstName: string;
   lastName: string;
   email: string;
-  // password: string; //TODO:??
-  // passcode: string; //TODO:??
+  password: string;
+  // passcode: string; // TODO: ?
 }
 
 

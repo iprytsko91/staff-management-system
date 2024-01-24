@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { reset } from "../store/sms";
 import { useLocalStorage } from "../hooks";
+import md5 from 'md5';
 
 const credentials = {
   username: 'admin',
-  password: 'admin'
+  password: '21232f297a57a5a743894a0e4a801fc3' // MD5 Admin
 }
 
 const generateToken = () => {
@@ -24,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   const [loginFailed, setLoginFailed] = useState(false);
 
   const login = (userName: string, password: string) => {
-    if (userName === credentials.username && password == credentials.password) {
+    if (userName === credentials.username && md5(password) == credentials.password) {
       const token = generateToken();
       setToken(token);
       setLoginFailed(false);

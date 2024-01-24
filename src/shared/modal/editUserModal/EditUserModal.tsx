@@ -29,6 +29,7 @@ export const EditUserModal = ({ user, saved }: EditUserModalParams) => {
       setValue('firstName', user.firstName)
       setValue('lastName', user.lastName)
       setValue('email', user.email)
+      setValue('password', user.password)
     }
   }, [modal.visible]);
 
@@ -104,6 +105,20 @@ export const EditUserModal = ({ user, saved }: EditUserModalParams) => {
                          }
                        })}/>
                 {errors.email && <span className='error'>{errors.email.message}</span>}
+              </div>
+              <div className="form-control">
+                <label htmlFor="password">Password</label>
+                <input id="password"
+                       type="text"
+                       className={errors.password && 'invalid'}
+                       {...register('password', {
+                         required: requiredMessage,
+                         minLength: {
+                           value: 8, //TODO: const
+                           message: 'Password length should be min 8 characters' // TODO: const
+                         }
+                       })}/>
+                {errors.password && <span className='error'>{errors.password.message}</span>}
               </div>
             </div>
           </div>
