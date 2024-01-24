@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 import { smsSlice } from "./sms"
 
 export const store = configureStore({
   reducer: {
-    sms: smsSlice.reducer,
+    sms: smsSlice.reducer
   },
 })
 

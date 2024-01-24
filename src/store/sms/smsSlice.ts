@@ -23,5 +23,6 @@ export const smsSlice = createSlice({
         state.users.splice(index, 1)
       }
     },
+    reset: () => smsInitialState
   },
 })

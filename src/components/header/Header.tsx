@@ -13,8 +13,8 @@ export function Header() {
           </Link>
           <nav className={classes['actions']}>
             {
-              auth.value ?
-                  <Link to="/" className='link-button'>Logout</Link>
+              auth.isAuthenticated ?
+                  <Link to="#" className='link-button' onClick={auth.onLogout}>Logout</Link>
                   :
                   <Link to="/login" className='link-button'>Login</Link>
             }

@@ -1,11 +1,12 @@
-import classes from "./LogoutModal.module.scss";
 import { Modal } from "../modal/Modal.tsx";
 import { CountdownTimer } from "../../countdownTimer/CountdownTimer.tsx";
 import { useModal } from "../ModalProvider.tsx";
+import { useAuth } from "../../../providers/AuthProvider.tsx";
 
 export function LogoutModal() {
   const modal = useModal()
   const countdownTimer: number = 30;
+  const auth = useAuth();
 
   if (!modal.visible) {
     return null; // Deletes html
@@ -13,6 +14,7 @@ export function LogoutModal() {
 
   const logout = () => {
     modal.close();
+    auth.onLogout();
   }
 
   const closeAndContinue = () => {

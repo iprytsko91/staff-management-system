@@ -8,11 +8,8 @@ export function LoginPage() {
   const [password, setPassword] = useState('');
   const rendersCount = useRef(1);
   const prevValue = useRef('');
-
-
-
-
-  const {reset, value, bind} = useInput('');
+  const { reset, value, bind } = useInput('');
+  const auth = useAuth();
 
   useEffect(() => {
     // console.log('Render Count Effect')
@@ -45,7 +42,7 @@ export function LoginPage() {
           <input id="password" type="password"
                  value={password}
                  onChange={(event) => setPassword(event.target.value)}/>
-          <button className='btn btn-primary'>Login</button>
+          <button className='btn btn-primary' onClick={auth.onLogin}>Login</button>
         </form>
       </div>
   );

@@ -14,8 +14,8 @@ function App() {
   return (
       <>
         <BrowserRouter>
-          <AuthProvider>
-            <Provider store={store}>
+          <Provider store={store}>
+            <AuthProvider>
               <Header/>
               <main>
                 <ModalProvider>
@@ -39,8 +39,8 @@ function App() {
                   </div>
                 </ModalProvider>
               </main>
-            </Provider>
-          </AuthProvider>
+            </AuthProvider>
+          </Provider>
         </BrowserRouter>
       </>
   )

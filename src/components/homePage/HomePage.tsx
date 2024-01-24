@@ -26,9 +26,6 @@ export function HomePage() {
     dispatch(addUsers(data))
   }, [data])
 
-  // const [auth, setAuth] = useLocalStorage('auth', 'false')
-  // console.log(auth)
-
   return (
       <>
         {/*<button onClick={() => setAuth('true')}>local storage</button>*/}
