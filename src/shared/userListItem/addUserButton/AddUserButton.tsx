@@ -3,13 +3,13 @@ import { useModal } from "../../modal/ModalProvider.tsx";
 import { useDispatch } from "react-redux";
 import { addUsers } from "../../../store/sms";
 import { BsFillPlusSquareFill } from "react-icons/bs";
-import { AddUserModal } from "../../modal/addUserModal/AddUserModal.tsx";
+import { EditUserModal } from "../../modal/editUserModal/EditUserModal.tsx";
 
 export const AddUserButton = () => {
   const modal = useModal();
   const dispatch = useDispatch()
 
-  const save = (user: UserModel) => {
+  const saved = (user: UserModel) => {
     dispatch(addUsers([user]));
     modal.close();
   };
@@ -19,7 +19,7 @@ export const AddUserButton = () => {
         <button className='btn' onClick={() => modal.show()}>
           Add New <BsFillPlusSquareFill style={{ marginLeft: '4px', width: '24px', height: '24px' }}/>
         </button>
-        <AddUserModal save={save}></AddUserModal>
+        <EditUserModal saved={saved}></EditUserModal>
       </>
   )
 }

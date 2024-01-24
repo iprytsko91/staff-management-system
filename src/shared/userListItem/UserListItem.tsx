@@ -1,21 +1,10 @@
-import { BsFillPencilFill } from "react-icons/bs";
-import { useDispatch } from "react-redux";
-
 import classes from './UserListItem.module.scss';
 import { UserModel } from "../models";
-import { deleteUser, updateUser } from "../../store/sms";
-import { ModalProvider, useModal } from "../modal/ModalProvider.tsx";
+import { ModalProvider } from "../modal/ModalProvider.tsx";
 import { DeleteUserButton } from "./deleteUserButton/DeleteUserButton.tsx";
+import { EditUserButton } from "./editUserButton/EditUserButton.tsx";
 
 export function UserListItem({ user }: { user: UserModel }) {
-  const dispatch = useDispatch();
-  const modal = useModal();
-
-  const deleteCurrentUser = (user: UserModel) => {
-    modal.show();
-    dispatch(deleteUser(user));
-  };
-
   // TODO: good to separate by `content` component
   return (
       <div className={classes['user-list-item-container']}>
@@ -36,11 +25,12 @@ export function UserListItem({ user }: { user: UserModel }) {
         </div>
 
         <div className={classes['actions-block']}>
-          {/*// TODO: edit in modal or expand?*/}
-          <button className='btn btn-circle' onClick={() => dispatch(updateUser(user))}><BsFillPencilFill/></button>
-          {/*// TODO: should be a cleanest way to open confirmation modals*/}
+          {/*// TODO: should be a cleanest way to open modals*/}
           <ModalProvider>
-            <DeleteUserButton user={user}></DeleteUserButton>
+            <EditUserButton user={user}/>
+          </ModalProvider>
+          <ModalProvider>
+            <DeleteUserButton user={user}/>
           </ModalProvider>
         </div>
       </div>

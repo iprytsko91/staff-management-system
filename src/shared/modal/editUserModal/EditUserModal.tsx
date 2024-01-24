@@ -2,22 +2,33 @@ import { Modal } from "../modal/Modal.tsx";
 import { useModal } from "../ModalProvider.tsx";
 import { UserModel } from "../../models";
 import { useInput } from "../../../hooks";
+import { v4 as uuidv4 } from 'uuid';
 
-type AddUserModalParams = { save: Function }
+type EditUserModalParams = { user?: UserModel, saved: Function }
 
-export const AddUserModal = ({ save }: AddUserModalParams) => {
+export const EditUserModal = ({ user, saved }: EditUserModalParams) => {
   const modal = useModal();
-  const userName = useInput('');
-  const firstName = useInput('');
-  const lastName = useInput('');
-  const email = useInput('');
+  const userName = useInput(user?.userName ?? '');
+  const firstName = useInput(user?.firstName ?? '');
+  const lastName = useInput(user?.lastName ?? '');
+  const email = useInput(user?.email ?? '');
+  console.log('renders', userName)
 
   if (!modal.visible) {
     return null; // Deletes html
   }
 
+  const resetForm = () => {
+    userName.reset();
+    firstName.reset();
+    lastName.reset();
+    email.reset();
+  }
+
   const getUserModel = () => {
+    console.log('getModel')
     return {
+      id: user?.id ?? uuidv4(),
       userName: userName.value,
       firstName: firstName.value,
       lastName: lastName.value,
@@ -25,9 +36,20 @@ export const AddUserModal = ({ save }: AddUserModalParams) => {
     } as UserModel;
   }
 
+  const cancel = () => {
+    resetForm();
+    modal.close();
+  }
+
+  const save = () => {
+    // TODO: issue, after update, I see previous values
+    saved(getUserModel());
+    resetForm();
+  }
+
   return (
       <Modal open={modal.visible}>
-        <h2>Add New User</h2>
+        <h2>{user ? 'Update User' : 'Add New User'}</h2>
         <div className="modal-body">
           <div className="form-control-group">
             <div className="form-control">
@@ -50,8 +72,9 @@ export const AddUserModal = ({ save }: AddUserModalParams) => {
         </div>
 
         <div className="actions">
-          <button className={`btn`} onClick={() => modal.close()}>Cancel</button>
-          <button className={`btn btn-primary`} onClick={() => save(getUserModel())}>Delete</button>
+          <button className={`btn`} onClick={cancel}>Cancel
+          </button>
+          <button className={`btn btn-primary`} onClick={save}>{user ? 'Update' : 'Add'}</button>
         </div>
       </Modal>
   );
