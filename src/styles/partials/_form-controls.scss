@@ -10,6 +10,10 @@ input {
   &:focus {
     border-color: var(--sms-color-tiffany-blue);
   }
+
+  &.invalid {
+    border-color: var(--sms-color-red);
+  }
 }
 
 .form-control-group {
@@ -21,5 +25,13 @@ input {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    padding-bottom: 22px;
+    position: relative;
+
+    .error {
+      position: absolute;
+      bottom: 0;
+      color: var(--sms-color-red);
+    }
   }
 }
