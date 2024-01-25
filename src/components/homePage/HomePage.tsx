@@ -35,7 +35,7 @@ export const HomePage = () => {
         {/*//TODO: better to extract users list to separate component*/}
         {users?.length ?
             <div className={classes['users-list']}>
-              {users.map((item, index) => <UserListItem key={index} user={item}/>)}
+              {users.map((item) => <UserListItem key={item.id} user={item}/>)}
             </div>
             :
             <div className={classes['no-users']}><h2>There are no users!</h2></div>
